@@ -1,20 +1,18 @@
-package demo.view {
-  import flash.display.DisplayObjectContainer;
-  public class ChooseViewCase {
+package demo.commands {
+  import demo.enum.Type;
+  import demo.utils.ArrayUtil;
+  import demo.model.IModel;
+  public class StartupCommand {
     //==========================================================================
     //  Dependencies
     //==========================================================================
     [Inject]
-    public var root:DisplayObjectContainer;
+    public var model:IModel;
     //==========================================================================
     //  Public methods
     //==========================================================================
-    [Test]
-    public function test():void {
-      var instance:ChooseView = new ChooseView();
-      root.addChild(instance);
-      instance.x = 200;
-      instance.y = 200;
+    public function execute():void {
+      model.rightType = ArrayUtil.randomElement([Type.PAPER, Type.ROCK, Type.SCISSORS]);
     }
   }
 }

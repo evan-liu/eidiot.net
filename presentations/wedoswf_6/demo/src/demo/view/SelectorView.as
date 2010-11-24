@@ -3,11 +3,11 @@ package demo.view {
 
   import flash.display.Sprite;
 
-  public class ChooseView extends Sprite {
+  public class SelectorView extends Sprite {
     //==========================================================================
     //  Constructor
     //==========================================================================
-    public function ChooseView() {
+    public function SelectorView() {
       super();
       build();
     }

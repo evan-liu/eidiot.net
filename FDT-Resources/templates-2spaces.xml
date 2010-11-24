@@ -136,6 +136,32 @@ public function ${tearDown}():void {
 [Test]
 public function ${test}():void {
   ${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Set up ui case" enabled="true" name="setupuicase">//==========================================================================
+//  Variables
+//==========================================================================
+private var instance:${Type};
+//==========================================================================
+//  Dependencies
+//==========================================================================
+[Inject]
+public var root:ContentContainer;
+//==========================================================================
+//  Public methods
+//==========================================================================
+[Before]
+public function ${setUp}():void {
+  instance = new ${Type}();
+  root.addChild(instance);
+  instance.x = 100;
+  instance.y = 100;
+}
+[After]
+public function ${tearDown}():void {
+  instance = null;
+}
+[Test]
+public function ${test}():void {
+  ${cursor}
 }</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="creates a switch block" enabled="true" id="com.powerflasher.fdt.ui.editor.template.switchBlock" name="switchBlock">switch (${expression}) {
   case ${result}:
     ${cursor}
@@ -154,7 +180,7 @@ public function ${test}():void {
   
 } finally {
   
-}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="public function" enabled="true" name="ufunction">public function ${func}(${cursor}):${void} {&#13;
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="public const" enabled="true" name="uconst">public const ${name}:${Signal} = new ${Signal}();</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="public function" enabled="true" name="ufunction">public function ${func}(${cursor}):${void} {&#13;
   &#13;
 }</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="public static const" enabled="true" name="usconst">public static const ${name}:${String}${cursor};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="public static function" enabled="true" name="usfunction">public static function ${func}(${cursor}):${void} {&#13;
   &#13;
