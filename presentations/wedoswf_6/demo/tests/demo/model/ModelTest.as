@@ -2,7 +2,8 @@ package demo.model {
   import demo.enum.Result;
   import demo.enum.Type;
   import org.flexunit.asserts.assertEquals;
-  import org.osflash.signals.utils.proceedOnSignal;
+  import org.osflash.signals.utils.SignalAsyncEvent;
+  import org.osflash.signals.utils.handleSignal;
   public class ModelTest {
     //==========================================================================
     //  Variables
@@ -34,16 +35,22 @@ package demo.model {
       assertEquals(Result.LOSE, instance.getResult(Type.SCISSORS, Type.ROCK));
     }
     [Test(async,timeout="500")]
-    public function test_both_done_signal_left_first():void {
-      proceedOnSignal(this, instance.bothDone);
+    public function left_then_right_done():void {
+      handleSignal(this, instance.bothDone, onBothDone, 500, {result:Result.WIN});
       instance.leftType = Type.PAPER;
       instance.rightType = Type.ROCK;
     }
     [Test(async,timeout="500")]
-    public function test_both_done_signal_right_first():void {
-      proceedOnSignal(this, instance.bothDone);
-      instance.rightType = Type.ROCK;
-      instance.leftType = Type.PAPER;
+    public function right_then_left_done():void {
+      handleSignal(this, instance.bothDone, onBothDone, 500, {result:Result.LOSE});
+      instance.rightType = Type.PAPER;
+      instance.leftType = Type.ROCK;
+    }
+    //==========================================================================
+    //  Event handlers
+    //============================================..==============================
+    private function onBothDone(event:SignalAsyncEvent, passData:Object):void {
+      assertEquals(instance.result, passData.result);
     }
   }
 }
