@@ -18,11 +18,11 @@ package demo.view {
       var selector:SelectorView = new SelectorView();
       addChild(selector);
 
-      terminal.x = 280;
-      terminal.y = 100;
+      terminal.x = 275;
+      terminal.y = 75;
 
-      selector.x = 180;
-      selector.y = 290;
+      selector.x = 150;
+      selector.y = 335;
     }
   }
 }

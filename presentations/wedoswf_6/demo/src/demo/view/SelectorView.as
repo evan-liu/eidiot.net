@@ -21,7 +21,7 @@ package demo.view {
         var button:HandButton = new HandButton(type);
         addChild(button);
         button.x = layoutX;
-        layoutX += 100;
+        layoutX += 120;
       }
     }
   }
