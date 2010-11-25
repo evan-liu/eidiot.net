@@ -49,6 +49,8 @@ class ${enclosing_type} ${cursor} {
 //  Public methods&#13;
 //==========================================================================</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Variables" enabled="true" name="Cvariables">//==========================================================================&#13;
 //  Variables&#13;
+//==========================================================================</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Verify methods" enabled="true" name="Cverifymethods">//==========================================================================&#13;
+//  Verify methods&#13;
 //==========================================================================</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="id for debug" enabled="true" name="debugid">//==========================================================================
 //  Debug ID
 //==========================================================================
