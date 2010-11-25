@@ -34,13 +34,13 @@ package demo.model {
       assertEquals(Result.WIN, instance.getResult(Type.SCISSORS, Type.PAPER));
       assertEquals(Result.LOSE, instance.getResult(Type.SCISSORS, Type.ROCK));
     }
-    [Test(async,timeout="500")]
+    [Test(async)]
     public function left_then_right_done():void {
       handleSignal(this, instance.bothDone, onBothDone, 500, {result:Result.WIN});
       instance.leftType = Type.PAPER;
       instance.rightType = Type.ROCK;
     }
-    [Test(async,timeout="500")]
+    [Test(async)]
     public function right_then_left_done():void {
       handleSignal(this, instance.bothDone, onBothDone, 500, {result:Result.LOSE});
       instance.rightType = Type.PAPER;
@@ -49,8 +49,8 @@ package demo.model {
     //==========================================================================
     //  Event handlers
     //============================================..==============================
-    private function onBothDone(event:SignalAsyncEvent, passData:Object):void {
-      assertEquals(instance.result, passData.result);
+    private function onBothDone(event:SignalAsyncEvent, data:Object):void {
+      assertEquals(instance.result, data.result);
     }
   }
 }

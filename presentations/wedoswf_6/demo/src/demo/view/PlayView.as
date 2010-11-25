@@ -9,19 +9,18 @@ package demo.view {
       build();
     }
     //==========================================================================
-    //  Properties
-    //==========================================================================
-    public const terminal:TerminalView = new TerminalView();
-    public const selector:SelectorView = new SelectorView();
-    //==========================================================================
     //  Private methods
     //==========================================================================
     private function build():void {
+      var terminal:TerminalView = new TerminalView();
       addChild(terminal);
+
+      var selector:SelectorView = new SelectorView();
       addChild(selector);
 
       terminal.x = 280;
       terminal.y = 100;
+
       selector.x = 180;
       selector.y = 290;
     }

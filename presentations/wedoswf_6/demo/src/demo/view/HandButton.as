@@ -1,8 +1,6 @@
 package demo.view {
   import demo.enum.Type;
 
-  import org.osflash.signals.Signal;
-
   import flash.display.MovieClip;
   import flash.display.Sprite;
   import flash.events.MouseEvent;
@@ -24,10 +22,6 @@ package demo.view {
       addEventListener(MouseEvent.ROLL_OVER, rollOverHandler);
       addEventListener(MouseEvent.ROLL_OUT, rollOutHandler);
     }
-    //==========================================================================
-    //  Signals
-    //==========================================================================
-    public const clicked:Signal = new Signal(Type);
     //==========================================================================
     //  Properties
     //==========================================================================

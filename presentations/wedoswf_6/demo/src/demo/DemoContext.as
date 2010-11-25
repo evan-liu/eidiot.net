@@ -1,14 +1,15 @@
 package demo {
-  import demo.view.PlayView;
-  import demo.view.TerminalMediator;
-  import demo.view.TerminalView;
-  import demo.view.SelectorMediator;
-  import demo.commands.StartupCommand;
+  import demo.commands.StartPlayCommand;
   import demo.model.IModel;
   import demo.model.Model;
+  import demo.view.SelectorMediator;
   import demo.view.SelectorView;
+  import demo.view.TerminalMediator;
+  import demo.view.TerminalView;
+
   import org.robotlegs.base.ContextEvent;
   import org.robotlegs.mvcs.Context;
+
   import flash.display.DisplayObjectContainer;
   public class DemoContext extends Context {
     //==========================================================================
@@ -27,11 +28,9 @@ package demo {
       mediatorMap.mapView(SelectorView, SelectorMediator);
       mediatorMap.mapView(TerminalView, TerminalMediator);
 
-      commandMap.mapEvent(ContextEvent.STARTUP, StartupCommand);
+      commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, StartPlayCommand);
 
-      contextView.addChild(new PlayView());
-
-      dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
+      dispatchEvent(new ContextEvent(ContextEvent.STARTUP_COMPLETE));
     }
   }
 }

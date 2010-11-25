@@ -1,7 +1,9 @@
 package demo.model {
   import demo.enum.Result;
   import demo.enum.Type;
+
   import org.osflash.signals.Signal;
+
   import flash.utils.Dictionary;
   public class Model implements IModel {
     //==========================================================================
@@ -27,13 +29,6 @@ package demo.model {
     private var _bothDone:Signal = new Signal();
     public function get bothDone():Signal {
       return _bothDone;
-    }
-    //----------------------------------
-    //  result
-    //----------------------------------
-    private var _result:Result;
-    public function get result():Result {
-      return _result;
     }
     //==========================================================================
     //  Properties
@@ -65,6 +60,13 @@ package demo.model {
         _result = getResult(leftType, rightType);
         _bothDone.dispatch();
       }
+    }
+    //----------------------------------
+    //  result
+    //----------------------------------
+    private var _result:Result;
+    public function get result():Result {
+      return _result;
     }
     //==========================================================================
     //  Public methods

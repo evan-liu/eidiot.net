@@ -15,9 +15,9 @@ package demo.view {
     //  Private methods
     //==========================================================================
     private function build():void {
-      const TYPE_LIST:Array = [Type.SCISSORS, Type.ROCK, Type.PAPER];
+      const typeList:Array = [Type.SCISSORS, Type.ROCK, Type.PAPER];
       var layoutX:Number = 0;
-      for each (var type:Type in TYPE_LIST) {
+      for each (var type:Type in typeList) {
         var button:HandButton = new HandButton(type);
         addChild(button);
         button.x = layoutX;

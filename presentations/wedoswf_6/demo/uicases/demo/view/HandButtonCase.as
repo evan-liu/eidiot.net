@@ -13,14 +13,14 @@ package demo.view {
     [Test]
     public function test():void {
       var typeList:Array = [Type.PAPER, Type.ROCK, Type.SCISSORS];
-      var currentX:Number = 200;
-      var currentY:Number = 200;
+      var layoutX:Number = 200;
+      var layoutY:Number = 200;
       for each (var type:Type in typeList) {
         var button:HandButton = new HandButton(type);
         root.addChild(button);
-        button.x = currentX;
-        button.y = currentY;
-        currentX += 100;
+        button.x = layoutX;
+        button.y = layoutY;
+        layoutX += 100;
       }
     }
   }
